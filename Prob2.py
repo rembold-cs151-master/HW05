@@ -52,6 +52,7 @@ def rabbit_pop_w_wolves(): # <-- fill in needed formal parameters
 
     Inputs:
         - t (int): desired year or generation
+        - Nw (int): desired number of wolves
 
     Outputs:
         - (int): the number of rabbits alive after t years
@@ -62,9 +63,9 @@ def rabbit_pop_w_wolves(): # <-- fill in needed formal parameters
 def calc_needed_wolves(): # <-- fill in needed formal parameters
     """
     Function which computes the minimum needed amount of wolves to ensure
-    the rabbit population is under 1000 after 10 years. Can use whatever numeric
+    the rabbit population is under 5000 after 10 years. Can use whatever numeric
     solving technique you prefer that applies to this situation. The desired
-    accuracy is simply that you have less than 1000 rabbits alive after 10 years,
+    accuracy is simply that you have less than 5000 rabbits alive after 10 years,
     and that you used the least amount of wolves to achieve that.
 
     Inputs:

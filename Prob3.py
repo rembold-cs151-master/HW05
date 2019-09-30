@@ -29,8 +29,10 @@ def count_flushes(): # <-- provide any needed formal parameters
     space. The number of flushes is counted and returned by the function.
 
     In addition, the function writes each hand containing a flush to the
-    file: flushes.txt, where each new line will contain one hand that
-    contained a flush.
+    file flushes.txt, where each new line will contain one hand that
+    contained a flush. You might be appending to that file here, but
+    make sure that if you run the program multiple times you only get
+    the latest runs lines added to the file!
 
     Inputs:
         - filename (str): filename of file with sets of poker hands
