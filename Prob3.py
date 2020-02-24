@@ -11,12 +11,12 @@ def is_flush(): # <-- provided any needed formal parameters
     whether or not a flush is present (if all 5 cards have the same
     suit).
 
-    Inputs:
-        - cards (str): String of the 5 card hand with 2 character
+    Args:
+        cards (str): String of the 5 card hand with 2 character
                        descriptions of card value at suit
 
-    Outputs:
-        - (bool): Whether or not the hand contains a flush
+    Returns:
+        (bool): Whether or not the hand contains a flush
     """
     pass # <-- remove or comment out once you add your code
 
@@ -34,11 +34,11 @@ def count_flushes(): # <-- provide any needed formal parameters
     make sure that if you run the program multiple times you only get
     the latest runs lines added to the file!
 
-    Inputs:
-        - filename (str): filename of file with sets of poker hands
+    Args:
+        filename (str): filename of file with sets of poker hands
 
-    Outputs:
-        - (int) The number of hands found that were flushes
+    Returns:
+        (int): The number of hands found that were flushes
     """
     pass # <-- remove or comment out once you add your code
 

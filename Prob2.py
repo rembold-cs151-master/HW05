@@ -1,7 +1,7 @@
 ##################################################
 # Name:
 # Collaborators:
-# Est Time spent (hrs):
+# Est Time Spent (hrs):
 ##################################################
 
 
@@ -13,12 +13,12 @@ def births(): #<-- fill in needed formal parameters
     and can adjust gender as needed to produce offspring. Unpaired rabbits
     produce no offspring.
 
-    Inputs:
-        - N (int): the current number of rabbits breeding that year
-        - brood (int): the number of baby rabbits that result from each mating pair
+    Args:
+        N (int): the current number of rabbits breeding that year
+        brood (int): the number of baby rabbits that result from each mating pair
 
-    Outputs:
-        - (int) the number of baby rabbits born that year
+    Returns:
+        (int) the number of baby rabbits born that year
     """
     pass #<-- comment or delete once you add your code
 
@@ -32,11 +32,11 @@ def rabbit_pop(): # <-- fill in needed formal parameters
     Rabbit populations are assumed to start at 2 rabbits and brood
     sizes to be 4 new rabbits per pairing.
 
-    Inputs:
-        - t (int): desired year or generation
+    Args:
+        t (int): desired year or generation
 
-    Outputs:
-        - (int): the number of rabbits alive after t years
+    Returns:
+        (int): the number of rabbits alive after t years
     """
     pass #<-- comment or delete once you add your code
 
@@ -50,12 +50,12 @@ def rabbit_pop_w_wolves(): # <-- fill in needed formal parameters
     sizes to be 4 new rabbits per pairing. Wolves consume rabbits
     with an alpha of 0.1.
 
-    Inputs:
-        - t (int): desired year or generation
-        - Nw (int): desired number of wolves
+    Args:
+        t (int): desired year or generation
+        Nw (int): desired number of wolves
 
-    Outputs:
-        - (int): the number of rabbits alive after t years
+    Returns:
+        (int): the number of rabbits alive after t years
     """
     pass #<-- comment or delete once you add your code
 
@@ -68,11 +68,11 @@ def calc_needed_wolves(): # <-- fill in needed formal parameters
     accuracy is simply that you have less than 5000 rabbits alive after 10 years,
     and that you used the least amount of wolves to achieve that.
 
-    Inputs:
-        - None
+    Args:
+        None
 
     Outputs:
-        - (int): the least number of wolves required
+        (int): the least number of wolves required
     """
     pass #<-- comment or delete once you add your code
 

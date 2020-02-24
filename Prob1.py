@@ -1,7 +1,7 @@
 ########################################
 # Name:
 # Collaborators:
-# Est Time spent (hrs):
+# Est Time Spent (hrs):
 ########################################
 
 
