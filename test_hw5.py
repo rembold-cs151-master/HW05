@@ -86,5 +86,5 @@ class Test_Prob3:
         Prob3.count_flushes('hands.txt')
         with open('flushes.txt', 'r') as f:
             lines = f.readlines()
-        assert len(lines) == 5, 'Incorrect number of lines in the output file'
+        assert len(lines) == 6, 'Incorrect number of lines in the output file'
 
