@@ -44,12 +44,20 @@ class Test_Prob2:
             student = Prob2.rabbit_pop(a)
             assert student == sols[i], self.report(a)
 
-    def test_rabbit_pop_wolf(self):
+    # def test_rabbit_pop_wolf(self):
+        # args = [(10,2), (5,5), (2,5)]
+        # sols = [100706, 394, 15]
+        # for i,a in enumerate(args):
+            # student = Prob2.rabbit_pop_w_wolves(*a)
+            # assert student == sols[i], self.report(a)
+
+    def test_rabbit_pop_wolf_new(self):
         args = [(10,2), (5,5), (2,5)]
-        sols = [100706, 394, 15]
+        sols = [37800, 140, 10]
+        sols2 = [54942, 151, 11]
         for i,a in enumerate(args):
             student = Prob2.rabbit_pop_w_wolves(*a)
-            assert student == sols[i], self.report(a)
+            assert student == sols[i] or student == sols2[i], self.report(a)
 
     def test_rabbit_pop_wolf_int(self):
         args = (10,2)
@@ -58,7 +66,7 @@ class Test_Prob2:
 
     def test_needed_num_wolves(self):
         student = Prob2.calc_needed_wolves()
-        assert student == 29
+        assert student == 7 or student == 8
 
 
 class Test_Prob3:
@@ -80,7 +88,7 @@ class Test_Prob3:
 
     def test_count_flushes(self):
         student = Prob3.count_flushes('hands.txt')
-        assert student == 5
+        assert student == 6
 
     def test_count_flushes_output(self):
         Prob3.count_flushes('hands.txt')
