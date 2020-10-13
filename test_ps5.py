@@ -46,7 +46,7 @@ class Test_Prob2:
     ml_sols = [[-1, 1, 0, 0, 2, -1], [3, 3, 2, 1, 4, -1], [-1, -1, 2, -1, 3, -1], [-1, 4, 3, 2, 2, 1], [1, 2, -1, 1, 0, 0], [0,
 1, 1, 1, 0, 0]] 
     alt_layout1 = [[True, True, False],[False, True, True], [False, False, False]]
-    alt1_sols = [[-1, -1, 2], [3, -1, -1], [1, 2, 2]]
+    alt1_sols = [[-1, -1, 3], [3, -1, -1], [1, 2, 2]]
     alt_layout2 = [[True, True, False],[False, True, True]]
     alt2_sols = [[-1, -1, 3], [3,-1,-1]]
     
@@ -59,7 +59,7 @@ class Test_Prob2:
 
     def test_count_mines_returns_proper_sized_array(self):
         to_check = [Prob2.mine_locations, self.alt_layout1, self.alt_layout2]
-        sols = [[5,5],[3,3], [2,3]]
+        sols = [[6,6],[3,3], [2,3]]
         for array,sizes in zip(to_check, sols):
             student = Prob2.count_mines(array)
             assert len(student) == sizes[0], "Array seems to be the wrong height?"
@@ -68,6 +68,6 @@ class Test_Prob2:
     def test_count_mines_returns_correct_counts(self):
         to_check = [Prob2.mine_locations, self.alt_layout1, self.alt_layout2]
         sols = [self.ml_sols, self.alt1_sols, self.alt2_sols]
-        for array,sol in zip(to_check, sols):
+        for array, sol in zip(to_check, sols):
             student = Prob2.count_mines(array)
-            assert student == sol, f"Array of counts seems to be off, as {sols} was expected but you returned {student}"
+            assert student == sol, f"Array of counts seems to be off."
