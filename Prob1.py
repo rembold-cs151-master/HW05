@@ -1,37 +1,47 @@
-########################################
+##################################################
 # Name:
 # Collaborators:
 # Est Time Spent (hrs):
-########################################
+##################################################
 
 
-def Part_A(max_n):
+def is_flush(): # <-- provided any needed formal parameters
     """
+    Function which takes a string of standard cards and returns
+    whether or not a flush is present (if all 5 cards have the same
+    suit).
+
+    Args:
+        cards (str): String of the 5 card hand with 2 character
+                       descriptions of card value at suit
+
+    Returns:
+        (bool): Whether or not the hand contains a flush
     """
-    total = 0
-    for i in range(max_n+1):
-        if i % 3 == 0:
-            total += i
-    return total
+    pass # <-- remove or comment out once you add your code
 
 
-def Part_B(phrase, des_letter):
+
+def count_flushes(): # <-- provide any needed formal parameters
     """
+    Function which reads in a large batch of poker hands from some file.
+    Each line contains two hands, with individual cards separated by a
+    space. The number of flushes is counted and returned by the function.
+
+    In addition, the function writes each hand containing a flush to the
+    file flushes.txt, where each new line will contain one hand that
+    contained a flush. You might be appending to that file here, but
+    make sure that if you run the program multiple times you only get
+    the latest runs lines added to the file!
+
+    Args:
+        filename (str): filename of file with sets of poker hands
+
+    Returns:
+        (int): The number of hands found that were flushes
     """
-    count = 0
-    trim_str = ""
-    for L in phrase:
-        if L == des_letter:
-            count += 1
-        else:
-            trim_str += L
-    return count, trim_str
+    pass # <-- remove or comment out once you add your code
 
 
-def Part_C(num):
-    """
-    """
-    for i in range(1,num):
-        if i**3 == num:
-            return True
-    return False
+if __name__ == '__main__':
+    print(f"Counted {count_flushes('hands.txt')} flushes in 'hands.txt'")

@@ -4,83 +4,70 @@
 # Est Time Spent (hrs):
 ##################################################
 
+mine_locations = [
+        [ True  , False , False , False , False , True],
+        [ False , False , False , False , False , True],
+        [ True  , True  , False , True  , False , True],
+        [ True  , False , False , False , False , False],
+        [ False , False , True  , False , False , False],
+        [ False , False , False , False , False , False]
+    ]
 
-def births(): #<-- fill in needed formal parameters
+# If you want to test more
+alt_locations = [
+        [ False , False , True  , False , False , False],
+        [ True  , False , False , False , False , True],
+        [ True  , False , False , False , False , False],
+        [ False , False , False , True  , False , True],
+        [ False , False , True  , False , False , False],
+        [ True  , True  , False , True  , False , True],
+    ]
+
+
+
+def check_index_location(row, col, loc):
     """
-    Function to compute the number of rabbits births each year.
-
-    Assumes that rabbits have a single mate over the course of the year
-    and can adjust gender as needed to produce offspring. Unpaired rabbits
-    produce no offspring.
+    Function which checks to see how many bombs in `loc` are in
+    the neighborhood of the given point, where 'neighborhood' is
+    defined as locations within one space, above, below, left,
+    right, or diagonal to the given point. If the given point
+    is itself a bomb, a -1 should be returned instead.
 
     Args:
-        N (int): the current number of rabbits breeding that year
-        brood (int): the number of baby rabbits that result from each mating pair
+        row (int): Row index of the point to check
+        col (int): Col index of the point to check
+        loc (list of boolean lists): Boolean array with mine locations
+
+    Returns
+        (int): Either -1 if the given location is a bomb itself,
+               or some value >=0 according to the number of neighbors
+               that are bombs.
+    """
+    pass
+
+
+
+
+
+
+def count_mines(loc):
+    """
+    Function to count the numbering neighboring mines at each point
+    in the array and return an array of the counts at each space.
+
+    Args:
+        loc (list of boolean lists): Boolean array with mine locations
 
     Returns:
-        (int) the number of baby rabbits born that year
+        (list of integer lists): List of lists of integers which
+            indicate the number of neigboring bombs.
     """
-    pass #<-- comment or delete once you add your code
+    pass
 
-
-def rabbit_pop(): # <-- fill in needed formal parameters
-    """
-    Recursive function which computes the total rabbit population 
-    after t years, assuming a birth rate given by births() and that 
-    each rabbit lives 4 years before dying.
-
-    Rabbit populations are assumed to start at 2 rabbits and brood
-    sizes to be 4 new rabbits per pairing.
-
-    Args:
-        t (int): desired year or generation
-
-    Returns:
-        (int): the number of rabbits alive after t years
-    """
-    pass #<-- comment or delete once you add your code
-
-
-def rabbit_pop_w_wolves(): # <-- fill in needed formal parameters
-    """
-    Recursive function which computes the total rabbit population
-    after t years, factoring in births, deaths, and wolf predators.
-
-    Rabbit populations are assumed to start at 2 rabbits and brood
-    sizes to be 4 new rabbits per pairing. Wolves consume rabbits
-    with an alpha of 0.1.
-
-    Args:
-        t (int): desired year or generation
-        Nw (int): desired number of wolves
-
-    Returns:
-        (int): the number of rabbits alive after t years
-    """
-    pass #<-- comment or delete once you add your code
-
-
-def calc_needed_wolves(): # <-- fill in needed formal parameters
-    """
-    Function which computes the minimum needed amount of wolves to ensure
-    the rabbit population is under 5000 after 10 years. Can use whatever numeric
-    solving technique you prefer that applies to this situation. The desired
-    accuracy is simply that you have less than 5000 rabbits alive after 10 years,
-    and that you used the least amount of wolves to achieve that.
-
-    Args:
-        None
-
-    Outputs:
-        (int): the least number of wolves required
-    """
-    pass #<-- comment or delete once you add your code
-
-
-# --------------
-# All code should be contained in the above functions
-# If you want to add code to automatically run your functions for
-# testing purposes, make sure it is inside the below if statement
 
 if __name__ == '__main__':
-    pass
+    print(check_index_location(0,0,mine_locations))
+    # counts = count_mines(mine_locations)
+    # # For easier visual comparison:
+    # for row in counts:
+        # print(row)
