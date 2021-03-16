@@ -4,6 +4,8 @@
 # Est Time Spent (hrs):
 ##################################################
 
+autochecks = False # Set this to True if you want autochecks to run on this problem
+
 mine_locations = [
         [ True  , False , False , False , False , True],
         [ False , False , False , False , False , True],
@@ -67,7 +69,7 @@ def count_mines(loc):
 
 if __name__ == '__main__':
     print(check_index_location(0,0,mine_locations))
+    # Uncomment below once you have count_mines done
     # counts = count_mines(mine_locations)
-    # # For easier visual comparison:
-    # for row in counts:
+    # for row in counts: # just for nicer printing
         # print(row)

@@ -23,4 +23,5 @@ __Remember to fill out the commented metadata at the top of each Python script!_
  	- Automated tests will check all template functions
  - Prob 3
  	- Automated tests will check all template functions
+	- You need to opt into these by changing the `autochecking` variable at the top to `True`, as I didn't want people who didn't attempt the extra credit to have it messing with their autochecker results on the first two problems.
 

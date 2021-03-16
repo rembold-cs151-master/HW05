@@ -8,6 +8,8 @@
 def get_puzzles(filename):
     """
     Function to read in all the puzzles in the given filename. 
+    This function is provided for your convenience and you don't
+    need to do ANYTHING inside it!
 
     Args:
         filename (str): filename of the file containing the puzzles

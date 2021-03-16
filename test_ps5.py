@@ -12,6 +12,8 @@ import Prob1
 import Prob2
 import Prob3
 
+extra_credit = pytest.mark.skipif(Prob3.autochecks == False, reason="Unattempted extra credit")
+
 class Test_Prob1:
     def test_is_flush(self):
         args = [
@@ -34,15 +36,16 @@ class Test_Prob1:
         Prob1.count_flushes('hands.txt')
         with open('hands_flushes.txt', 'r') as f:
             lines = f.readlines()
-        assert len(lines) == 6, 'Incorrect number of lines in the output file'
+        assert len(lines) == 6, f'You are supposed to output one hand per line in the output file, so I would expect 6 lines but am reading {len(lines)}.'
 
 class Test_Prob2:
     def test_file_puzzles(self):
         puzzles = Prob2.get_puzzles("puzzles.txt")
         sols = [True] * 5 + [False] * 5
         for i in range(len(puzzles)):
-            student = Prob2.is_valid_puzzle(p[i])
+            student = Prob2.is_valid_puzzle(puzzles[i])
             assert student == sols[i], f"Puzzle {i} should return {sols[i]} but you are returning {student}."
+
 
 
 class Test_Prob3:
@@ -54,7 +57,8 @@ class Test_Prob3:
 
     alt_layout2 = [[True, True, False],[False, True, True]]
     alt2_sols = [[-1, -1, 3], [3,-1,-1]]
-    
+
+    @extra_credit
     def test_check_index_location(self):
         to_check = [[0,0], [5,5], [3,0], [0,3]]
         for point in to_check:
@@ -62,6 +66,7 @@ class Test_Prob3:
             thissol = self.ml_sols[point[0]][point[1]]
             assert student == thissol, f"Should have returned {thissol} but instead returned {student} with inputs of check_index_location({*point, Prob3.mine_locations})."
 
+    @extra_credit
     def test_count_mines_returns_proper_sized_array(self):
         to_check = [Prob3.mine_locations, self.alt_layout1, self.alt_layout2]
         sols = [[6,6],[3,3], [2,3]]
@@ -69,7 +74,7 @@ class Test_Prob3:
             student = Prob3.count_mines(array)
             assert len(student) == sizes[0], "Array seems to be the wrong height?"
             assert len(student[0]) == sizes[1], "Array seems to be the wrong width?"
-
+    @extra_credit
     def test_count_mines_returns_correct_counts(self):
         to_check = [Prob3.mine_locations, self.alt_layout1, self.alt_layout2]
         sols = [self.ml_sols, self.alt1_sols, self.alt2_sols]

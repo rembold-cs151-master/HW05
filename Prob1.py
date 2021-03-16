@@ -44,4 +44,7 @@ def count_flushes(): # <-- provide any needed formal parameters
 
 
 if __name__ == '__main__':
-    print(f"Counted {count_flushes('hands.txt')} flushes in 'hands.txt'")
+    hand = "TH 3H 2H JH 7H"
+    print(f"{hand} is a flush? {is_flush(hand)}")
+    # Uncomment once you finish count_flushes
+    # print(f"Counted {count_flushes('hands.txt')} flushes in 'hands.txt'")
