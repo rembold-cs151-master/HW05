@@ -6,7 +6,6 @@
 
 
 import pytest
-import os
 
 import Prob1
 import Prob2

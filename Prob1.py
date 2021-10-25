@@ -13,7 +13,7 @@ def is_flush(): # <-- provided any needed formal parameters
 
     Args:
         cards (str): String of the 5 card hand with 2 character
-                       descriptions of card value at suit
+                     descriptions of card value at suit
 
     Returns:
         (bool): Whether or not the hand contains a flush

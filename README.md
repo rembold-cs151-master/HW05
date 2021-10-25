@@ -1,11 +1,16 @@
 # Problem Set 5
+<details>
+<summary><em>metadata</em></summary>
+Category: problem-set<br>
+Points: 14<br>
+Due: 2021-11-01<br>
+</details>
 
-Assignment Status: PENDING
+- [ ] Submitted?
 
-_Please change the above to DONE when you finish and want the assignment to be graded!_
+_Please insert an x in the square brackets above to mark the assignment as submitted!_
 
-Due the night of March 21, 2021
-
+Due the night of November the 1st at midnight!
 
 ## Instructions
 The homework pdf has the basic instructions, and you should definitely read the docstrings, but here are some additional guidelines:

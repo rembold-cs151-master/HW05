@@ -19,7 +19,7 @@ def get_puzzles(filename):
                            Each puzzle is a list of lists of ints
 
     Usage:
-    >>> puzzles = get_puzzles(puzzles.txt)
+    >>> puzzles = get_puzzles('puzzles.txt')
     >>> print(puzzles[0]) # for the first puzzle
     >>> print(puzzles[1]) # for the second puzzle, etc
     """
@@ -55,5 +55,5 @@ def is_valid_puzzle(): # <-- provide any needed formal parameters
 
 if __name__ == '__main__':
     puzzles = get_puzzles("puzzles.txt")
-    index = 0
-    print(f"Puzzle Index {index} is valid? {is_valid_puzzle(puzzles[index])}")
+    puzzle_index = 0
+    print(f"Puzzle Index {puzzle_index} is valid? {is_valid_puzzle(puzzles[puzzle_index])}")
