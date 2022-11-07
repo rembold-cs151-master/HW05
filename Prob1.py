@@ -8,7 +8,7 @@
 class Card:
     """Represents a single playing card, with both rank and suit.
 
-    Internally, the numbers 1 through 14 represent Ace through King, respectively, and
+    Internally, the numbers 1 through 13 represent Ace through King, respectively, and
     the numbers 0 through 3 represent the suits clubs, diamonds, hearts, and spades,
     respectively.
     """
