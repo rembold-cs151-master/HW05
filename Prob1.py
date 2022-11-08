@@ -30,7 +30,7 @@ def test_cards():
     pass # Remove and add your own code below!
 
 
-if __init__ == '__main__':
+if __name__ == '__main__':
     C1 = Card(3,0)
     #print(C1) #Uncomment once you've written __str__
     #print(C1.get_rank()) #Uncomment once you've written your rank getter
