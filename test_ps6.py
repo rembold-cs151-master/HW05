@@ -11,11 +11,11 @@ from Prob2 import cryptocurrency_calculator
 
 class Test_Prob1:
 
-    def test_str_method_created(self):
+    def test_str_or_repr_method_defined(self):
         student = Deck()
-        assert '__main__' not in str(student), "Did you define a __str__ method that returns something?"
+        assert '__main__' not in str(student), "Did you define a __str__ or __repr__ method that returns something?"
 
-    def test_str_method_prints_nice_card_representations(self):
+    def test_str_or_repr_prints_nice_reps(self):
         student = Deck()
         assert len(str(student)) < 52*5, "All the cards in your deck should be printed with their two character codes, and that does not seem to be the case here?"
 
@@ -65,4 +65,36 @@ class Test_Prob1:
 
 
 class Test_Prob2:
-    """ Coming soon """
+    def test_example1(self, monkeypatch, capsys):
+        entries = ['Bitcoin', '1', '1-Mar-22', '1-Dec-22']
+        monkeypatch.setattr('builtins.input', lambda _: entries.pop(0))
+        cryptocurrency_calculator()
+        captured = capsys.readouterr().out.splitlines()
+        assert 'loss' in captured[-1].lower()
+        assert '27,387.51' in captured[-1]
+
+    def test_example2(self, monkeypatch, capsys):
+        entries = ['DogeCoin', '1000', '1-Jun-22', '1-Dec-22']
+        monkeypatch.setattr('builtins.input', lambda _: entries.pop(0))
+        cryptocurrency_calculator()
+        captured = capsys.readouterr().out.splitlines()
+        assert 'profit' in captured[-1].lower()
+        assert '20.54' in captured[-1]
+
+    def test_other_situations(self, monkeypatch, capsys):
+        totest = [
+            {'inputs': ['Binance', '50', '10-Feb-22', '1-Nov-22'],
+             'outputs': ('loss', '74,889.00')},
+            {'inputs': ['Bitcoin', '100', '1-Jan-22', '1-Dec-22'],
+             'outputs': ('loss', '3,071,968.00')},
+            {'inputs': ['DogeCoin', '5000', '17-Mar-22', '1-Nov-22'],
+             'outputs': ('profit', '130.50')}
+        ]
+        for entry in totest:
+            icopy = entry['inputs'].copy()
+            monkeypatch.setattr('builtins.input', lambda _: entry['inputs'].pop(0))
+            cryptocurrency_calculator()
+            captured = capsys.readouterr().out.splitlines()
+            for out in entry['outputs']:
+                assert out in captured[-1].lower(), f"With inputs of {icopy}, your function should have printed {out} and didn't?"
+
